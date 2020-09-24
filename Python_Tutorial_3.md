@@ -1,6 +1,6 @@
 [Back to Tutorial Index](py_index.md)
 Updated 9-22-2020
-
+ 
 # Python Tutorial 3
 
 ### Dictionaries, Tuples, Functions, and Files
