@@ -1,5 +1,5 @@
 [Back to Tutorial Index](py_index.md)  
-Updated 9-21-2020
+Updated 9-25-2020
 
 # Python Tutorial 2:
 
@@ -239,11 +239,13 @@ for x in sl:
 > this
 ```
 
-## Exercise
+## Exercises
 **1. Assign the string "This is an awesome sample sentence" to the variable _a_**
-**2. Split the string into a list and assign it to variable _b_**
-**3. Write a loop that prints each item in _b_ if the last letter in the item is "e"**
-**4. Define a new empty list and assign it to variable _c_**
-**5. Write a loop that adds each item in _b_ to _c_ if the last letter in the item is "e"**
 
-[Click here to check your answers after giving it a try.](Python_Tutorial_2_answers.md)
+**2. Split the string into a list and assign it to variable _b_**
+
+**3. Write a loop that prints each item in _b_**
+
+**4. Define a new empty list and assign it to variable _c_**
+
+**5. Write a loop that adds each item in _b_ to _c_ if the last letter in the item is "e"**
