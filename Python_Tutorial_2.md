@@ -242,7 +242,7 @@ for x in sl:
 ## Exercises
 **1. Assign the string "This is an awesome sample sentence" to the variable _a_**
 
-**2. Split the string into a list and assign it to variable _b_**
+**2. Split the string into a list of words and assign it to variable b**
 
 **3. Write a loop that prints each item in _b_**
 
