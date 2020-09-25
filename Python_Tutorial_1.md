@@ -1,6 +1,6 @@
 [Back to Tutorial Index](py_index.md)  
 Updated 9-21-2020
-# Introduction to Python
+# Python Tutorial 1
 
 ### Accessing Python; Values, Variables and Functions
 
