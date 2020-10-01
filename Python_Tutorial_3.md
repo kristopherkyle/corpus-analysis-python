@@ -323,7 +323,7 @@ print(sample_dict)
 > {'the': 5226263.0, 'of': 2691108.0, 'and': 2215331.0, 'to': 2189223.0, 'a': 1827567.0, 'in': 1677334.0}
 ```
 
-4. Now, write a function called "file_freq_dicter()" that takes a filename as an argument and subsequently reads the file (which is expected to be in tab-delimited format consisting of words and their frequencies) and outputs a dictionary consisting of word : frequency pairs. Be sure that frequency figures are converted from strings to floats. Then, use your function to open the file <a href="https://raw.githubusercontent.com/kristopherkyle/corpus-analysis-python/master/sample_data/bnc_written_freq.txt">bnc_written_freq.txt<\a> and convert it to a dictionary. Don't forget to place the file in the same folder as your script (and set your working directory!)
+4. Now, write a function called "file_freq_dicter()" that takes a filename as an argument and subsequently reads the file (which is expected to be in tab-delimited format consisting of words and their frequencies) and outputs a dictionary consisting of word : frequency pairs. Be sure that frequency figures are converted from strings to floats. Then, use your function to open the file <a href="https://github.com/kristopherkyle/corpus-analysis-python/blob/master/sample_data/bnc_written_freq.txt"> bnc_written_freq.txt </a> and convert it to a dictionary. Don't forget to place the file in the same folder as your script (and set your working directory!)
 
 ```Python
 def file_freq_dicter(filename):
