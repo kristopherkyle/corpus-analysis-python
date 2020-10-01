@@ -47,7 +47,7 @@ for x in sample_d:
 ```python
 #iterate over keys:
 for x in sample_d:
-    print(sample_d[x]) #prints value for each key
+	print(sample_d[x]) #prints value for each key
 ```
 ```
 > 69033.45
@@ -133,12 +133,12 @@ All functions begin with a "def" statement that includes the name of the functio
 
 ```python
 def safe_divide(numerator,denominator): #this function has two arguments
-    if denominator == 0: #if the denominator is 0
-        output = 0 #the the output is 0
-    else: #otherwise
-        output = numerator/denominator #the output is the numerator divided by the denominator
+	if denominator == 0: #if the denominator is 0
+		output = 0 #the the output is 0
+	else: #otherwise
+		output = numerator/denominator #the output is the numerator divided by the denominator
 
-    return(output) #return output
+	return(output) #return output
 ```
 I include the safe_divide() function in almost all of my programs because Python will throw a ZeroDivisionError error if you try to divide a numerator by zero (for example, if you are comparing word frequencies across two corpora and a word occurs 532 times in corpus A, but doesn't occur in corpus B):
 
@@ -167,11 +167,11 @@ print(value)
 The reg_past() function (see below) takes a string and determines (imperfectly) whether the string is an English regular past tense verb (i.e., ends in -ed).
 ```python
 def reg_past(word):
-    past = False #set default value to False
-    if len(word) > 2: #if the string is longer than two characters
-        if word[-2:] == "ed": #if the final two characters are "ed"
-            past = True
-    return(past) # return the value for past (True or False)
+	past = False #set default value to False
+	if len(word) > 2: #if the string is longer than two characters
+		if word[-2:] == "ed": #if the final two characters are "ed"
+				past = True
+	return(past) # return the value for past (True or False)
 ```
 ```python
 ex1 = reg_past("programmed")
@@ -190,17 +190,16 @@ print(ex2)
 We can also, of course, use functions within functions. Below, we will create a function that takes one argument (a sentence string), converts the string to a list of words, and calculates the proportion of words that are in the past tense. Our program won't be perfect (we will deal with some of the issues that arise in later tutorials), but it will provide an example of the kinds of things we tend to do in corpus analyses.
 ```python
 def past_prop(sent_string):
-    counter = 0 #this variable will be used to count instances of past tense verbs
-    sent_list = sent_string.split(" ") #split the string into a list of words
-    print(sent_list) #this is printed to show what the program is doing
-    for word in sent_list: #this will loop through all of the words in our sentence
-        if reg_past(word) == True: #if the word has an "ed" ending
-            print("past tense:",word) #print past tense words
-            counter += 1
-    nwords = len(sent_list) #this counts the number of words in the sentence
-    proportion = safe_divide(counter,nwords) #this will be the proportion of "ed" words in the sentence
-    return(proportion) #return the proportion
-```
+	counter = 0 #this variable will be used to count instances of past tense verbs
+	sent_list = sent_string.split(" ") #split the string into a list of words
+	print(sent_list) #this is printed to show what the program is doing
+	for word in sent_list: #this will loop through all of the words in our sentence
+		if reg_past(word) == True: #if the word has an "ed" ending
+			print("past tense:",word) #print past tense words
+			counter += 1
+	nwords = len(sent_list) #this counts the number of words in the sentence
+	proportion = safe_divide(counter,nwords) #this will be the proportion of "ed" words in the sentence
+	return(proportion) #return the proportion```
 ```python
 prop = past_prop("I climbed many rocks this summer.")
 print(prop)
@@ -257,8 +256,8 @@ sample_spread = open("test_spreadsheet.csv", "w") #create .csv file
 #first we write the header:
 sample_spread.write("Word,Frequency") #note that the values are separated by ","
 for stuff in sample_d:
-    outstring = "\n" + stuff + "," + sample_d[stuff] # newline character ("\n") + key + separator + value + newline character
-    sample_spread.write(outstring)
+	outstring = "\n" + stuff + "," + sample_d[stuff] # newline character ("\n") + key + separator + value + newline character
+	sample_spread.write(outstring)
 
 sample_spread.flush()
 sample_spread.close()
@@ -292,10 +291,10 @@ sample_string = "the\t5226263\nof\t2691108\nand\t2215331\nto\t2189223\na\t182756
 
 #this is an outline for your function:
 def splitter(input_string):
-    output_list = []
-    #insert code here
+	output_list = []
+	#insert code here
 
-    return(output_list)
+	return(output_list)
 
 #after completing your function, you should be able to run the following code and get the results below
 sample_list = splitter(sample_string)
@@ -311,10 +310,10 @@ sample_list = [['the', '5226263'], ['of', '2691108'], ['and', '2215331'], ['to',
 
 #this is an outline for your function:
 def freq_dicter(input_list):
-    output_dict = {}
-    #insert code here
+	output_dict = {}
+	#insert code here
 
-    return(output_dict)
+	return(output_dict)
 
 #after completing your function, you should be able to run the following code and get the results below
 sample_dict = freq_dicter(sample_list)
@@ -328,11 +327,10 @@ print(sample_dict)
 
 ```Python
 def file_freq_dicter(filename):
-    out_dict = {}
-    spreadsheet = #open and read the file here
-    #split the string into rows
-    #iterate through the rows and assign the word as the key and the frequency as the value
-    return(out_dict)
+	out_dict = {}
+	spreadsheet = #open and read the file here
+	#split the string into rows
+	#iterate through the rows and assign the word as the key and the frequency as the value	    return(out_dict)
 
 #if your function works properly, the following code should result in the output below.
 bnc_freq = file_freq_dicter("bnc_written_freq.txt")

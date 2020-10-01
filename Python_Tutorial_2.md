@@ -147,12 +147,12 @@ The basic format for conditional statments is _if conditional_stmnt: do somethin
 ```Python
 int1 = 2
 if int1 < 2:
-    #note that the "do something" statement is indented (by a tab or 4 spaces)
-    print("The number is smaller than 2")
+	#note that the "do something" statement is indented (by a tab or 4 spaces)
+	print("The number is smaller than 2")
 elif int1 == 2:
-    print("The number is 2!")
+	print("The number is 2!")
 else:
-    print("The number is greater than two")
+	print("The number is greater than two")
 ```
 ```
 > The number is 2!
@@ -162,7 +162,7 @@ else:
 #we can check to see if two string are the same
 str1 = "sample string"
 if str1 == "sample string":
-    print("match!")
+	print("match!")
 ```
 ```
 > match!
@@ -180,7 +180,7 @@ if "a" in str1:
 #we can check to see if two lists are the same
 list1 = ["this", "is", "a", "list", "of", "strings"]
 if list1 == ["this", "is", "a", "list", "of", "strings"]:
-    print("match!")
+	print("match!")
 ```
 ```
 > match!
@@ -188,7 +188,7 @@ if list1 == ["this", "is", "a", "list", "of", "strings"]:
 ```python
 #we can also check to see if an item (int, float, string, etc.) is in a list
 if "list" in list1:
-    print("yay!")
+	print("yay!")
 ```
 ```
 > yay!
@@ -214,7 +214,7 @@ The basic syntax for a loop is _for local_variable in iterable: do something_
 sl = ["a", "wonderful", "list", "this", "is"]
 
 for x in sl: #note that 'x' is a local variable and is completely arbitrary
-    print(x) #we can call the local variable
+	print(x) #we can call the local variable
 #note that the "do something" statement (i.e., print(x)) is indented by a tab (or 4 spaces)
 ```
 ```
@@ -229,10 +229,10 @@ for x in sl: #note that 'x' is a local variable and is completely arbitrary
 ```python
 #if statements in loops
 for x in sl:
-    if "t" in x:
-        print(x)
-    else:
-        continue #continue tells the loop to go to the next item
+	if "t" in x:
+			print(x)
+		else:
+			continue #continue tells the loop to go to the next item
 ```
 ```
 > list
