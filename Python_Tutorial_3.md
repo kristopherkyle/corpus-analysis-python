@@ -1,6 +1,6 @@
 [Back to Tutorial Index](py_index.md)
-Updated 9-22-2020
- 
+Updated 10-1-2020
+
 # Python Tutorial 3
 
 ### Dictionaries, Tuples, Functions, and Files
@@ -264,5 +264,84 @@ sample_spread.flush()
 sample_spread.close()
 ```
 The spreadsheet should now be in your working directory!
+
+## Exercises
+Imagine that you have a spreadsheet consisting of words, their corpus frequency, and their corpus range (i.e., the number of corpus documents in which they occur). Your goal is to write a script that opens the spreadsheet and converts the data to a dictionary format which can be used for downstream processes. The following exercises will build towards that goal.
+1. Create an empty dictionary called "d1". Then, using indexing, create a key : value pair in "d1" where the word in the sample list ("l1" in the code below) is the key and the number (in this case, a frequency value) is the key.
+
+```python
+l1 = ['the', '5226263'] #frequency of the word "the" in the British National Corpus (BNC)
+
+#define empty dictionary "d1" here
+
+#assign the key : value pair here
+
+#if you completed the exercise correctly, the following code will result in the output below
+print(d1["the"])
+```
+```
+> 5226263
+```
+
+2. Write a function named "splitter()" that takes a string (in the format below) and converts it into a list of lists. The outer list should be split by newline characters ("\n") (i.e., will indicate rows), and the inner list should be split by tabs ("\t") (i.e., will indicate columns). Your function should return the list of lists.
+
+```python
+#note, these are raw frequency scores for the written section of the British National Corpus (90 million words)
+sample_string = "the\t5226263\nof\t2691108\nand\t2215331\nto\t2189223\na\t1827567\nin\t1677334"
+
+#this is an outline for your function:
+def splitter(input_string):
+    output_list = []
+    #insert code here
+
+    return(output_list)
+
+#after completing your function, you should be able to run the following code and get the results below
+sample_list = splitter(sample_string)
+print(sample_list)
+```
+```
+> [['the', '5226263'], ['of', '2691108'], ['and', '2215331'], ['to', '2189223'], ['a', '1827567'], ['in', '1677334']]
+```
+3. Now write a function called "freq_dicter()" that takes the output of the splitter() function as an argument and returns a dictionary in the following format: {'word' : frequency}. Be sure to convert the frequency value into a float.
+
+```Python
+sample_list = [['the', '5226263'], ['of', '2691108'], ['and', '2215331'], ['to', '2189223'], ['a', '1827567'], ['in', '1677334']]
+
+#this is an outline for your function:
+def freq_dicter(input_list):
+    output_dict = {}
+    #insert code here
+
+    return(output_dict)
+
+#after completing your function, you should be able to run the following code and get the results below
+sample_dict = freq_dicter(sample_list)
+print(sample_dict)
+```
+```
+> {'the': 5226263.0, 'of': 2691108.0, 'and': 2215331.0, 'to': 2189223.0, 'a': 1827567.0, 'in': 1677334.0}
+```
+
+4. Now, write a function called "file_freq_dicter()" that takes a filename as an argument and subsequently reads the file (which is expected to be in tab-delimited format consisting of words and their frequencies) and outputs a dictionary consisting of word : frequency pairs. Be sure that frequency figures are converted from strings to floats. Then, use your function to open the file ["bnc_written_freq.txt"](sample_data/"bnc_written_freq.txt") and convert it to a dictionary. Don't forget to place the file in the same folder as your script (and set your working directory!)
+
+```Python
+def file_freq_dicter(filename):
+    out_dict = {}
+    spreadsheet = #open and read the file here
+    #split the string into rows
+    #iterate through the rows and assign the word as the key and the frequency as the value
+    return(out_dict)
+
+#if your function works properly, the following code should result in the output below.
+bnc_freq = file_freq_dicter("bnc_written_freq.txt")
+print(bnc_freq["hearing"])
+print(bnc_freq["python"])
+```
+```
+> 4527.0
+> 109.0
+```
+
 
 [Back to Tutorial Index](py_index.md)
