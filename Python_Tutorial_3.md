@@ -267,7 +267,8 @@ The spreadsheet should now be in your working directory!
 
 ## Exercises
 Imagine that you have a spreadsheet consisting of words, their corpus frequency, and their corpus range (i.e., the number of corpus documents in which they occur). Your goal is to write a script that opens the spreadsheet and converts the data to a dictionary format which can be used for downstream processes. The following exercises will build towards that goal.
-1. Create an empty dictionary called "d1". Then, using indexing, create a key : value pair in "d1" where the word in the sample list ("l1" in the code below) is the key and the number (in this case, a frequency value) is the key.
+
+1) Create an empty dictionary called "d1". Then, using indexing, create a key : value pair in "d1" where the word in the sample list ("l1" in the code below) is the key and the number (in this case, a frequency value) is the key.
 
 ```python
 l1 = ['the', '5226263'] #frequency of the word "the" in the British National Corpus (BNC)
@@ -283,7 +284,7 @@ print(d1["the"])
 > 5226263
 ```
 
-2. Write a function named "splitter()" that takes a string (in the format below) and converts it into a list of lists. The outer list should be split by newline characters ("\n") (i.e., will indicate rows), and the inner list should be split by tabs ("\t") (i.e., will indicate columns). Your function should return the list of lists.
+2) Write a function named "splitter()" that takes a string (in the format below) and converts it into a list of lists. The outer list should be split by newline characters ("\n") (i.e., will indicate rows), and the inner list should be split by tabs ("\t") (i.e., will indicate columns). Your function should return the list of lists.
 
 ```python
 #note, these are raw frequency scores for the written section of the British National Corpus (90 million words)
@@ -303,7 +304,7 @@ print(sample_list)
 ```
 > [['the', '5226263'], ['of', '2691108'], ['and', '2215331'], ['to', '2189223'], ['a', '1827567'], ['in', '1677334']]
 ```
-3. Now write a function called "freq_dicter()" that takes the output of the splitter() function as an argument and returns a dictionary in the following format: {'word' : frequency}. Be sure to convert the frequency value into a float.
+3) Now write a function called "freq_dicter()" that takes the output of the splitter() function as an argument and returns a dictionary in the following format: {'word' : frequency}. Be sure to convert the frequency value into a float.
 
 ```Python
 sample_list = [['the', '5226263'], ['of', '2691108'], ['and', '2215331'], ['to', '2189223'], ['a', '1827567'], ['in', '1677334']]
@@ -323,7 +324,7 @@ print(sample_dict)
 > {'the': 5226263.0, 'of': 2691108.0, 'and': 2215331.0, 'to': 2189223.0, 'a': 1827567.0, 'in': 1677334.0}
 ```
 
-4. Now, write a function called "file_freq_dicter()" that takes a filename as an argument and subsequently reads the file (which is expected to be in tab-delimited format consisting of words and their frequencies) and outputs a dictionary consisting of word : frequency pairs. Be sure that frequency figures are converted from strings to floats. Then, use your function to open the file <a href="https://github.com/kristopherkyle/corpus-analysis-python/blob/master/sample_data/bnc_written_freq.txt"> bnc_written_freq.txt </a> and convert it to a dictionary. Don't forget to place the file in the same folder as your script (and set your working directory!)
+4) Now, write a function called "file_freq_dicter()" that takes a filename as an argument and subsequently reads the file (which is expected to be in tab-delimited format consisting of words and their frequencies) and outputs a dictionary consisting of word : frequency pairs. Be sure that frequency figures are converted from strings to floats. Then, use your function to open the file <a href="https://github.com/kristopherkyle/corpus-analysis-python/blob/master/sample_data/bnc_written_freq.txt"> bnc_written_freq.txt </a> and convert it to a dictionary. Don't forget to place the file in the same folder as your script (and set your working directory!)
 
 ```Python
 def file_freq_dicter(filename):
