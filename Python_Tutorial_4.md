@@ -1,4 +1,4 @@
-# Python Tutorial 4: Corpus Loading, Tokenizing, Lemmatizing, and N-grams
+# Python Tutorial 4: Tokenization, Lemmatization, and Frequency Lists
 [Back to Tutorial Index](py_index.md)
 
 (updated 10-2-2020)
