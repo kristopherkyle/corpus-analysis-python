@@ -197,7 +197,7 @@ def corpus_freq(dir_name,lemma_d):
 			else:
 				freq[x] += 1
 
-	return(freq)```
+	return(freq)
 ```
 Now, lets try out our function. To do so, download [brown_corpus.zip](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_corpus.zip) and put the folder in your working directory. For Windows users, you may have two folders named "brown_corpus" (one within the other). If so, make sure to take the folder that has 15 text files in it and put it directly in your working directory (i.e., not inside another folder). Then, we can run the following code:
 
@@ -263,4 +263,7 @@ def freq_writer(freq_list,filename):
 #this will write sorted_brown to a file named "brown_freq.txt" in your working directory
 freq_writer(sorted_brown,"brown_freq.txt")
 ```
-As you will see as you look at the frequency list, there may be some items that we want to ignore (e.g., quotation marks and other punctuation), but otherwise our scripts worked as intended!
+As you will see as you look at the frequency list, there may be some items that we want to ignore (e.g., commas, periods, and other punctuation), but otherwise our scripts worked as intended!
+
+## Exercises
+(to be added)
