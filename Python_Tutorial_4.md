@@ -87,7 +87,7 @@ In order to lemmatize our corpus, we need to complete two tasks. First, we need 
 
 For this tutorial, we will load a lemma dictionary that I already generated from the list provided by [Laurence Anthony](https://www.laurenceanthony.net/resources/wordlists/antbnc_lemmas_ver_003.zip). For sake of simplicity and brevity, I am not going to go over generating the dictionary from a text file, but if you are interested, [the code is available here.](PySupp1_lemmatization.md)
 
-Instead, we will load the lemma dictionary directly, using the [**_pickle()_**](https://docs.python.org/3/library/pickle.html) module. Make sure that ["ant_lemmas.pickle"](location) is in your working directory, then run the following code to load it:
+Instead, we will load the lemma dictionary directly, using the [**_pickle()_**](https://docs.python.org/3/library/pickle.html) module. Make sure that ["ant_lemmas.pickle"](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/ant_lemmas.pickle) is in your working directory, then run the following code to load it:
 ```Python
 import pickle #load pickle module
 lemma_dict = pickle.load("ant_lemmas.pickle","rb") #open pickled dictionary and assign it to lemma_dict
@@ -199,7 +199,7 @@ def corpus_freq(dir_name,lemma_d):
 
 	return(freq)```
 ```
-Now, lets try out our function. To do so, download [brown_corpus.zip](link_here) and put the folder in your working directory. For Windows users, you may have two folders named "brown_corpus" (one within the other). If so, make sure to take the folder that has 15 text files in it and put it directly in your working directory (i.e., not inside another folder). Then, we can run the following code:
+Now, lets try out our function. To do so, download [brown_corpus.zip](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_corpus.zip) and put the folder in your working directory. For Windows users, you may have two folders named "brown_corpus" (one within the other). If so, make sure to take the folder that has 15 text files in it and put it directly in your working directory (i.e., not inside another folder). Then, we can run the following code:
 
 ```Python
 brown_freq = corpus_freq("brown_corpus",lemma_dict)
