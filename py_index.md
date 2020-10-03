@@ -7,7 +7,7 @@
 
 ### [Tutorial 3: Dictionaries, Tuples, Functions, and Files](Python_Tutorial_3.md)
 
-### Tutorial 4: Corpus Loading, Frequency Lists, Text Cleaning
+### [Tutorial 4: Tokenization, Lemmatization, and Frequency Lists](Python_Tutorial_3.md)
 
 ### Tutorial 5: Concordancing
 
