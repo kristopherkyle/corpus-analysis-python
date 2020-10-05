@@ -257,7 +257,7 @@ sample_spread = open("test_spreadsheet.csv", "w") #create .csv file
 #first we write the header:
 sample_spread.write("Word,Frequency") #note that the values are separated by ","
 for stuff in sample_d:
-	outstring = "\n" + stuff + "," + sample_d[stuff] # newline character ("\n") + key + separator + value + newline character
+	outstring = "\n" + stuff + "," + str(sample_d[stuff]) # newline character ("\n") + key + separator + string version of value
 	sample_spread.write(outstring)
 
 sample_spread.flush()
