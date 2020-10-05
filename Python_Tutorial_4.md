@@ -70,7 +70,7 @@ def tokenize(input_string):
 ```
 Now, we can try out our new function:
 
-```Python
+```python
 s1 = "This is a sample sentence. This is one too! Is this?"
 l1 = tokenize(s1)
 print(l1)
@@ -88,7 +88,7 @@ In order to lemmatize our corpus, we need to complete two tasks. First, we need 
 For this tutorial, we will load a lemma dictionary that I already generated from the list provided by [Laurence Anthony](https://www.laurenceanthony.net/resources/wordlists/antbnc_lemmas_ver_003.zip). For sake of simplicity and brevity, I am not going to go over generating the dictionary from a text file, but if you are interested, [the code is available here.](PySupp1_lemmatization.md)
 
 Instead, we will load the lemma dictionary directly, using the [**_pickle()_**](https://docs.python.org/3/library/pickle.html) module. Make sure that ["ant_lemmas.pickle"](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/ant_lemmas.pickle) is in your working directory, then run the following code to load it:
-```Python
+```python
 import pickle #load pickle module
 lemma_dict = pickle.load("ant_lemmas.pickle","rb") #open pickled dictionary and assign it to lemma_dict
 ```
@@ -149,7 +149,7 @@ def freq_simple(tok_list):
 	return(freq)
 ```
 Now, we can use our function to create a frequency dictionary for the sample text we tokenized and lemmatized above.
-```Python
+```python
 freq1 = freq_simple(lemma1)
 print(freq1)
 ```
@@ -171,7 +171,7 @@ While this may seem like a lot to do, we have already created most of the buildi
 
 In addition, will use a new module, **_glob()_** which creates lists of files that match certain criteria.
 
-```Python
+```python
 import glob
 def corpus_freq(dir_name,lemma_d):
 	freq = {} #create an empty dictionary to store the word : frequency pairs
@@ -201,7 +201,7 @@ def corpus_freq(dir_name,lemma_d):
 ```
 Now, lets try out our function. To do so, download [brown_corpus.zip](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_corpus.zip) and put the folder in your working directory. For Windows users, you may have two folders named "brown_corpus" (one within the other). If so, make sure to take the folder that has 15 text files in it and put it directly in your working directory (i.e., not inside another folder). Then, we can run the following code:
 
-```Python
+```python
 brown_freq = corpus_freq("brown_corpus",lemma_dict)
 print(brown_freq["be"])
 print(brown_freq["climb"])
