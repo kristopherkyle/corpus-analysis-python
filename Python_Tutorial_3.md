@@ -1,5 +1,5 @@
 [Back to Tutorial Index](py_index.md)
-Updated 10-1-2020
+Updated 10-5-2020
 
 # Python Tutorial 3
 
@@ -200,6 +200,7 @@ def past_prop(sent_string):
 	nwords = len(sent_list) #this counts the number of words in the sentence
 	proportion = safe_divide(counter,nwords) #this will be the proportion of "ed" words in the sentence
 	return(proportion) #return the proportion```
+```
 ```python
 prop = past_prop("I climbed many rocks this summer.")
 print(prop)
