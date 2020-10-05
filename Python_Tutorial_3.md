@@ -180,7 +180,7 @@ print(ex1)
 ```
 > True
 ```
-```Python
+```python
 ex2 = reg_past("programs")
 print(ex2)
 ```
@@ -305,7 +305,7 @@ print(sample_list)
 ```
 3) Now write a function called "freq_dicter()" that takes the output of the splitter() function as an argument and returns a dictionary in the following format: {'word' : frequency}. Be sure to convert the frequency value into a float.
 
-```Python
+```python
 sample_list = [['the', '5226263'], ['of', '2691108'], ['and', '2215331'], ['to', '2189223'], ['a', '1827567'], ['in', '1677334']]
 
 #this is an outline for your function:
@@ -325,7 +325,7 @@ print(sample_dict)
 
 4) Now, write a function called "file_freq_dicter()" that takes a filename as an argument and subsequently reads the file (which is expected to be in tab-delimited format consisting of words and their frequencies) and outputs a dictionary consisting of word : frequency pairs. Be sure that frequency figures are converted from strings to floats. Then, use your function to open the file <a href="https://github.com/kristopherkyle/corpus-analysis-python/blob/master/sample_data/bnc_written_freq.txt"> bnc_written_freq.txt </a> and convert it to a dictionary. Don't forget to place the file in the same folder as your script (and set your working directory!)
 
-```Python
+```python
 def file_freq_dicter(filename):
 	out_dict = {}
 	spreadsheet = #open and read the file here
