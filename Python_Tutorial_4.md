@@ -265,5 +265,17 @@ freq_writer(sorted_brown,"brown_freq.txt")
 ```
 As you will see as you look at the frequency list, there may be some items that we want to ignore (e.g., commas, periods, and other punctuation), but otherwise our scripts worked as intended!
 
-## Exercises
-(to be added)
+## Exercise
+
+For this exercise, you will create a python script that will:
+
+- Load corpus files
+- Read, tokenize, and lemmatize each file
+- Calculate frequency figures for the entire corpus
+- Write the frequency list to a file
+
+You can, of course use the code that we developed in the tutorial to accomplish the above tasks, but you must alter the code to **ignore and/or delete punctuation marks*.* The tutorial did not explicitly show you how to do this, but you should be able to adapt what we learned to accomplish this task.
+
+For this exercise, you can use any corpus of your choosing EXCEPT for the Brown corpus. If you aren't familiar with other corpora, you can use [this corpus of transcribed L2 speech](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/NICT_JLE_Cleaned.zip)
+
+You will submit a .zip folder that includes a) your corpus, b) your python script (be sure to include comments so I know what each line in your script does), and c) your frequency list.
