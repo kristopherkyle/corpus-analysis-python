@@ -90,7 +90,7 @@ For this tutorial, we will load a lemma dictionary that I already generated from
 Instead, we will load the lemma dictionary directly, using the [**_pickle()_**](https://docs.python.org/3/library/pickle.html) module. Make sure that ["ant_lemmas.pickle"](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/ant_lemmas.pickle) is in your working directory, then run the following code to load it:
 ```python
 import pickle #load pickle module
-lemma_dict = pickle.load("ant_lemmas.pickle","rb") #open pickled dictionary and assign it to lemma_dict
+lemma_dict = pickle.load(open("ant_lemmas.pickle","rb")) #open pickled dictionary and assign it to lemma_dict
 ```
 The lemma dictionary includes word form : lemma pairs, as is demonstrated below:
 ```python
