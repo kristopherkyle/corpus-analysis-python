@@ -328,7 +328,7 @@ print(sample_dict)
 
 ```python
 def file_freq_dicter(filename):
-	out_dict = {}
+	out_dict = {} #note that this may be unnecessary depending on how you write this function
 	spreadsheet = #open and read the file here
 	#split the string into rows
 	#iterate through the rows and assign the word as the key and the frequency as the value	    return(out_dict)
