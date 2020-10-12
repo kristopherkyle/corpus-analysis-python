@@ -9,10 +9,10 @@
 
 ### [Tutorial 4: Tokenization, Lemmatization, and Frequency Lists](Python_Tutorial_4.md)
 
-### Tutorial 5: Concordancing
+### [Tutorial 5: Concordancing](Python_Tutorial_5.md)
 
-### Tutorial 6: Keyness
+### Tutorial 6: Collocation
 
-### Tutorial 7: Collocation
+### Tutorial 7: Keyness
 
 ### Tutorial 8: Dealing with annotated texts
