@@ -52,13 +52,13 @@ def concord(tok_list,target,nleft,nright):
 
 	for idx, x in enumerate(tok_list): #iterate through token list using the enumerate function. idx = list index, x = list item
 		if x in target: #if the item matches one of the target items
-			t = x #set t as the item
 
 			if idx < nleft: #deal with left context if search term comes early in a text
 				left = tok_list[:idx] #get x number of words before the current one (based on nleft)
 			else:
 				left = tok_list[idx-nleft:idx] #get x number of words before the current one (based on nleft)
 
+			t = x #set t as the item
 			right = tok_list[idx+1:idx+nright+1] #get x number of words after the current one (based on nright)
 			hits.append([left,t,right]) #append a list consisting of a list of left words, the target word, and a list of right words
 
@@ -305,8 +305,12 @@ def concord_regex(tok_list,target_regex,nleft,nright):
 
 	for idx, x in enumerate(tok_list): #iterate through token list using the enumerate function. idx = list index, x = list item
 		if re.compile(target_regex).match(x) != None: #If the target regular expression finds a match in the string (the slightly strange syntax here literally means "if it doesn't not find a match")
-			if idx < nleft: #this deals with circumstances where are target word occurs near the beginning of the text
-				nleft = idx #if the desired left context is longer than is possible, use as much left context as possible (i.e., to the beginning of the text)
+
+					if idx < nleft: #deal with left context if search term comes early in a text
+						left = tok_list[:idx] #get x number of words before the current one (based on nleft)
+					else:
+						left = tok_list[idx-nleft:idx] #get x number of words before the current one (based on nleft)
+
 			t = x #set t as the item
 			left = tok_list[idx-nleft:idx] #get x number of words before the current one (based on nleft)
 			right = tok_list[idx+1:idx+nright+1] #get x number of words after the current one (based on nright)
