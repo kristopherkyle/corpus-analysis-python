@@ -1,13 +1,13 @@
 # Python Tutorial 5: Concordancing
 [Back to Tutorial Index](py_index.md)
 
-(updated 10-8-2020)
+(updated 10-13-2020)
 
 A central aspect of corpus analysis is examining the contexts in which linguistic items occur (this is referred to as concordancing). With large corpora (and/or with frequently occurring items), a random sample of item occurrences is used.
 
 In order to generate concordance lines, we will need to create a function that:
-- can create a random sample
 - can identify target linguistic items and their context
+- can create a random sample of the identified items (and context)
 
 We will also need to write concordance lines to a file (for further analysis and record keeping purposes).
 
