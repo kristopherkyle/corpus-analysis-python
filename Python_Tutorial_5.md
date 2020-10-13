@@ -66,7 +66,7 @@ Below, we will test our function using a sample list. We will search for hits of
 ```python
 sample_list = "If I had to name my favorite food it would be pepperoni pizza . I really love to eat pizza because it is nutritious and delicious .".lower().split(" ")
 
-samp_hits = concord(sample_list,"pizza",5,5)
+samp_hits = concord(sample_list,["pizza"],5,5) #note that our target is in a list!!!
 
 for x in samp_hits:
 	print(x)
@@ -351,3 +351,5 @@ write_concord("investigate_conc.txt",investigate_two_sorts)
 2. Update the corp_conc() function in a manner that allows you to use the concord_regex() function instead of the concord() function and call it corp_conc_regex(). Then, create a sample of 50 concordance lines with node/target words that start with "repe". What is the most common root word in your sample?
 
 3. Create a sample of 50 concordance lines that include words with the nominalized suffix "ation" (be sure to include plural forms). Bonus points if you are able to avoid words such as "nation" (which is not a transparent nominalization-don't overthink this).
+
+4. Create a version of the "write_concord()" function that places a tab character between items in the context lists instead of a space. Do a concordance search of your choosing (in Brown or another corpus) and write the concordance lines to a file called "my_search.txt"
