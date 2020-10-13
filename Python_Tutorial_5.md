@@ -52,14 +52,15 @@ def concord(tok_list,target,nleft,nright):
 
 	for idx, x in enumerate(tok_list): #iterate through token list using the enumerate function. idx = list index, x = list item
 		if x in target: #if the item matches one of the target items
-			if idx < nleft: #this deals with circumstances where are target word occurs near the beginning of the text
-				orig_nleft = nleft #save nleft setting
-				nleft = idx #if the desired left context is longer than is possible, use as much left context as possible (i.e., to the beginning of the text)
 			t = x #set t as the item
-			left = tok_list[idx-nleft:idx] #get x number of words before the current one (based on nleft)
+
+			if idx < nleft: #deal with left context if search term comes early in a text
+				left = tok_list[:idx] #get x number of words before the current one (based on nleft)
+			else:
+				left = tok_list[idx-nleft:idx] #get x number of words before the current one (based on nleft)
+
 			right = tok_list[idx+1:idx+nright+1] #get x number of words after the current one (based on nright)
 			hits.append([left,t,right]) #append a list consisting of a list of left words, the target word, and a list of right words
-			nleft = orig_nleft #reset nleft value
 
 	return(hits)
 ```
