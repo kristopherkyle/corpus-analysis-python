@@ -352,10 +352,10 @@ write_concord("investigate_conc.txt",investigate_two_sorts)
 ```
 ## Exercises
 
-1. Create a sample of 50 concordance lines of the word "record" in the Brown corpus. Use ten words of right context and ten words of left context. Write the concordance lines to a file. Then, read the concordance lines and identify at least two senses of the word "record". Be sure to provide at least two examples of each sense.
+1. Create a sample of 50 concordance lines of the word "record" in the Brown corpus. Use ten words of right context and ten words of left context. Write the concordance lines to a file called "1_record.txt". Then, read the concordance lines and identify at least two senses of the word "record".  Be sure to provide at least two examples of each sense. Report your findings in your .py file (use hashtags at the beginning of each line)
 
-2. Update the corp_conc() function in a manner that allows you to use the concord_regex() function instead of the concord() function and call it corp_conc_regex(). Then, create a sample of 50 concordance lines with node/target words that start with "repe". What is the most common root word in your sample?
+2. Update the corp_conc() function in a manner that allows you to use the concord_regex() function instead of the concord() function and call it corp_conc_regex(). Then, create a sample of 50 concordance lines with node/target words that start with "repe". Write the concordance lines to a file called "2_repe_.txt"(What is the most common root word in your sample?
 
-3. Create a sample of 50 concordance lines that include words with the nominalized suffix "ation" (be sure to include plural forms). Bonus points if you are able to avoid words such as "nation" (which is not a transparent nominalization-don't overthink this).
+3. Create a sample of 50 concordance lines that include words with the nominalized suffix "ation" (be sure to include plural forms). Bonus points if you are able to avoid words such as "nation" (which is not a transparent nominalization-don't overthink this). Write your results to a file called "3_ation.txt"
 
-4. Create a version of the "write_concord()" function that places a tab character between items in the context lists instead of a space. Do a concordance search of your choosing (in Brown or another corpus) and write the concordance lines to a file called "my_search.txt"
+4. Create a version of the "write_concord()" function that places a tab character between items in the context lists instead of a space. Do a concordance search of your choosing (in Brown or another corpus) and write the concordance lines to a file called "4_my_search.txt"
