@@ -11,7 +11,7 @@
 
 ### [Tutorial 5: Concordancing](Python_Tutorial_5.md)
 
-### Tutorial 6: Collocation
+### [Tutorial 6: Collocation](Python_Tutorial_6.md)
 
 ### Tutorial 7: Keyness
 
