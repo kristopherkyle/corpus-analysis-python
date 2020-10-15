@@ -171,7 +171,7 @@ Our Python version of the **_head()_** function takes six arguments:
 By default, the **_head()_** function prints a sorted list of items in the **_stat_dict_**. It can also return a sorted list and/or write the list to a file.
 
 ```python
-import itemgetter
+import operator
 def head(stat_dict,hits = 20,hsort = True,output = False,filename = None, sep = "\t"):
 	#first, create sorted list. Presumes that operator has been imported
 	sorted_list = sorted(stat_dict.items(),key=operator.itemgetter(1),reverse = hsort)[:hits]
@@ -304,16 +304,16 @@ We can also look at the combined collocate frequency:
 head(brown_context_freq["combined_freq"],hits = 10)
 ```
 ```
-> the     192
-of      125
-and     79
-to      76
-in      72
-a       45
-by      28
-have    23
-as      23
-was     22
+> the     102
+of      75
+and     43
+in      37
+to      34
+a       25
+by      21
+have    14
+on      11
+for     11
 ```
 And the left and right context frequencies specifically by using the **_head()_** function with _"left_freq"_ and _"right_freq"_ respectively.
 
