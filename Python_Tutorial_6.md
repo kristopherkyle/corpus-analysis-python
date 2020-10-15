@@ -479,3 +479,9 @@ was     0.16793893129770993
 ```
 
 ## Exercises
+
+1. Using the words _investigation_ and _investigations_ as the search term, identify the most strongly associated collocates that occur immediately before the search term with regard to MI and T score (i.e., your left context should be set to one and your right context should be set to 0). Choose one of the items from each of your collocate lists and hypothesize about the nature of the relationship between the collocate and the target word. Is the relationship grammatical? idiomatic? something else?
+
+2. Now do the same thing, but set your collocate search to include only the word immediately following the search term.
+
+3. Pick a search term and corpus of your choosing. You are welcome to use the Brown corpus, but you are also welcome to use some other corpus. Determine the most strongly associated items with your search term based on two statistics of your choosing. Use two span settings (left and right should both be no more than ten and no less than two), and compare your results. What specific effects does search span seem to have on your findings?
