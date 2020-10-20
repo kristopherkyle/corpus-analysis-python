@@ -316,7 +316,7 @@ def keyness(freq_dict1,freq_dict2): #this assumes that raw frequencies were used
 ```
 Now we will test our keyness function using two subsets of the Brown corpus. The first will be texts from newspapers (reportage, editorials, and reviews). The second will be texts that represent various types of fiction (general, mystery, science, adventure, and romance). In practice, we would want to use larger corpora (if possible), but for our purposes these two subcorpora will be adequate.
 
-To start, download the two corpora: [brown_press.zip]() and [brown_fiction.zip](). Then expand the corpora and place them in your working directory.
+To start, download the two corpora: [brown_press.zip](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_press.zip) and [brown_fiction.zip](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_fiction.zip). Then expand the corpora and place them in your working directory.
 
 After the two corpora have been placed in your working directory, we can frequency dictionaries for each
 
