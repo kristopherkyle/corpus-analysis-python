@@ -13,6 +13,6 @@
 
 ### [Tutorial 6: Collocation](Python_Tutorial_6.md)
 
-### Tutorial 7: Keyness
+### [Tutorial 7: Keyness](Python_Tutorial_7.md)
 
 ### Tutorial 8: Dealing with annotated texts
