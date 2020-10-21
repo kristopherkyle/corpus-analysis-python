@@ -168,7 +168,7 @@ def corpus_freq(dir_name,gram_size = 1,separator = " "):
 		#open the file as a string
 		text = open(filename, errors = "ignore").read()
 		#tokenize text using our tokenize() function
-		tokenized = tokenize(text,gram_size) #use tokenizer indicated in function argument (e.g., "tokenize()" or "ngramizer()")
+		tokenized = tokenize(text,gram_size,separator) #use tokenizer indicated in function argument (e.g., "tokenize()" or "ngramizer()")
 
 		#iterate through the tokenized text and add words to the frequency dictionary
 		for x in tokenized:
@@ -387,7 +387,7 @@ scotty  178.91320629108762
 curt    166.43088957310476
 matsuo  153.94857285512194
 ```
-Next, we will look at the top hits for words that are shared across the two corpora using percent difference (%diff). The results indicate (for example) that _administration_ occurs with a frequency that is 10,717% higher in the newspaper corpus than the fiction corpus.
+Next, we will look at the top hits for words that are shared across the two corpora using percent difference (%diff). The results indicate (for example) that _administration_ occurs with a frequency that is 11,652% higher in the newspaper corpus than the fiction corpus.
 ```python
 head(brown_key_news_fic["%diff"],10)
 ```
