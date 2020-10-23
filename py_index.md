@@ -15,4 +15,4 @@
 
 ### [Tutorial 7: Keyness](Python_Tutorial_7.md)
 
-### Tutorial 8: Dealing with annotated texts
+### [Tutorial 8: Dealing with annotated texts](Python_Tutorial_8.md)
