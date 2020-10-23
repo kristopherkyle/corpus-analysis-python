@@ -108,7 +108,7 @@ def bigrammer_pos(token_list, pos1, pos2, separator = " "):
 ```
 Now, we will test it. We will look for words with adjective tags ["jj","jjr","jjs"] followed by words with common noun tags ["nn","nns"] in our sample. All other word combinations will be ignored.
 ```python
-jj_nn_grams = bigrammer_pos(brown_sample_posd, ["jj"], ["nn","nns"], separator = " ")
+jj_nn_grams = bigrammer_pos(brown_sample_posd, ["jj","jjr","jjs"], ["nn","nns"], separator = " ")
 print(jj_nn_grams)
 ```
 ```
