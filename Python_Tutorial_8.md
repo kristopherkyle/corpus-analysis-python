@@ -52,7 +52,7 @@ def pos_dicter(text,splitter):
 	output_list = [] #list for each token
 	tokenized = text.lower().split(" ") #split tokens on white space
 	for x in tokenized: #iterate through tokens
-		if "/" not in x: #ignore tokens that don't have tags (this will ignore extra spaces, newline characters, etc.)
+		if splitter not in x: #ignore tokens that don't have the tag splitter character (i.e., that don't have tags; this will ignore extra spaces, newline characters, etc.)
 			continue
 		token = {} #represent each token as a dictionary
 		toklist = x.split(splitter) #for each, separate words from tags
@@ -151,6 +151,7 @@ def corpus_freq(dir_name,tokenizer,splitter, pos1, pos2, separator = " ", ending
 
 	return(freq) #return frequency dictionary
 
+import operator
 def head(stat_dict,hits = 20,hsort = True,output = False,filename = None, sep = "\t"):
 	#first, create sorted list. Presumes that operator has been imported
 	sorted_list = sorted(stat_dict.items(),key=operator.itemgetter(1),reverse = hsort)[:hits]
@@ -175,19 +176,19 @@ Now, we can use **_corpus_freq()_** to determine the frequency of various adject
 
 ```python
 brown_jj_nn_freq = corpus_freq("brown_pos",pos_dicter,"/", ["jj","jjr","jjs"], ["nn","nns"])
-head(brown_jj_nn_freq)
+head(brown_jj_nn_freq,hits = 10)
 ```
 ```
-> fiscal year     57
-high school     55
-old man 53
+> fiscal year     56
+high school     54
+old man 52
 young man       47
 great deal      43
 long time       39
-dominant stress 31
-young men       30
-new members     30
-foreign policy  29
+young men       29
+new members     29
+real estate     27
+good deal       27
 ```
 
 ## Vertical format (e.g., CONLL format)
@@ -302,13 +303,14 @@ xml_sample = """
 The most efficient way to extract information from an XML document is to use an XML parser. There are many XML parsers, but we will use Python's [built-in XML parser ElementTree](https://docs.python.org/3/library/xml.etree.elementtree.html), which is easy to use and has great documentation. Below, we will use the **_.iter()_** method to iterate through all \<w> tags in the text. For each \<w> tag, we will use **_.text_** to get text between the opening and closing tags, and **_.get()_** to get attribute values.
 
 ```python
+import xml.etree.ElementTree as ET #import ElementTree
 root = ET.fromstring(xml_sample) #starting point in parse tree
 for x in root.iter(tag = "w"): #iterate through the first 10 "w" tags
 	word = x.text #get word text
 	lemma = x.get("hw") #get lemma from attribute "head"
 	pos = x.get("c5") #get CLAWS 5 POS tag from attribute "c5"
 	big_pos = x.get("pos") #get pos tag from attribute "pos"
-	print(word,lemma,pos,big_pos) #print word and tag
+	print(word,lemma,pos,big_pos) #print word, lemma, C5 pos, and big pos
 ```
 (Note, only the first ten lines of the print out are included below - yours will have more lines)
 ```
@@ -331,12 +333,16 @@ We will now create a function called **_bnc_xml_dicter()_** to extract token inf
 def bnc_xml_dicter(text,splitter = None): #splitter is not used - it is only here to conform with other tokenizer functions so it will work with corpus_freq()
 	out_list = [] ##list for each token
 	root = ET.fromstring(text) #starting point in parse tree
-	for x in root.iter(tag = "w"): #iterate through the first 10 "w" tags
+	for x in root.iter(tag = "w"): #iterate through the "w" tags
 		token = {}
 
 		#in this format, spaces are included in the "w" tag text.
 		word = x.text #get word text
-		word = word.strip() #remove trailing spaces
+
+		if word == None: #in some cases, <w> tags don't have text.
+			continue #we will ignore these
+		else:
+			word = word.strip() #remove trailing spaces
 
 		token["word"] = word  
 		token["lemma"] = x.get("hw") #get lemma from attribute "head"
@@ -398,6 +404,30 @@ for x in root.iter(tag = "{http://www.tei-c.org/ns/1.0}w"): #iterate through all
 	word = x.text #get word text
 	pos = x.get("type") #get pos tag from attribute "type"
 	print(word,pos) #print word and tag
+```
+```
+> The AT
+Fulton NP
+County NN
+Grand JJ
+Jury NN
+said VBD
+Friday NR
+an AT
+investigation NN
+of IN
+Atlanta's NPg
+recent JJ
+primary NN
+election NN
+produced VBD
+no AT
+evidence NN
+that CS
+any DTI
+irregularities NNS
+took VBD
+place NN
 ```
 One example of a corpus that uses TEI XML is the [XML version of the Brown Corpus](). For now, we won't create a function to analyze these texts, but you should be able to do so by making small changes to the **_bnc_xml_dicter()_** function.
 ## Exercises
