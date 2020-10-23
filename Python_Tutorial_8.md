@@ -3,7 +3,7 @@
 
 (updated 10-22-2020)
 
-Annotating texts for features as part of speech (POS) and syntactic dependency relations (among many, many others) can allow for detailed corpus analyses. For many features (and for many languages), automatic annotation is a viable option (see, e.g., [Spacy](https://spacy.io/), and easy to use POS tagger and dependency parser implemented in Python). However, for some features (and for some languages), automatic annotation tools/models have not been developed (though new NLP tools are being released every day - it is certainly worth a quick web search).
+Annotating texts for features as part of speech (POS) and syntactic dependency relations (among many, many others) can allow for detailed corpus analyses. For many features (and for many languages), automatic annotation is a viable option (see, e.g., [Spacy](https://spacy.io/), an easy to use POS tagger and dependency parser implemented in Python). However, for some features (and for some languages), automatic annotation tools/models have not been developed (though new NLP tools are being released every day - it is certainly worth a quick web search).
 
 Addtionally, in many cases, corpora have already been annotated for various features (see, e.g., annotated corpora distributed by the [Linguistic Data Consortium](https://catalog.ldc.upenn.edu/topten) and those distributed on the [Universal Dependencies webpage](https://universaldependencies.org/) ).
 
@@ -252,8 +252,11 @@ def conll_dicter(text,splitter):
 		token["word"] = anno[1].lower() #put words in lower case
 		token["upos"] = anno[3] #get the universal pos tag
 		token["pos"] = anno[4] #penn tag
-		token["head_idx"] = sent_start + int(anno[6]) #id of dependency head (in document)
 		token["dep"] = anno[7] #dependency relationship
+		if token["dep"] == "root": #roots don't have a concrete head. In a sentence, their head idx is 0. That doesn't make sense here, so we will make "root" the head idx.
+			token["head_idx"] = "root"
+		else:
+			token["head_idx"] = sent_start + int(anno[6]) #id of dependency head (in document)
 		previous_id += 1		
 		output_list.append(token)
 	return(output_list)
