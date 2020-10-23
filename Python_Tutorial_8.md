@@ -70,7 +70,7 @@ print(sample_posd) #print sample
 ```
 > [{'word': 'this', 'pos': 'dt'}, {'word': 'is', 'pos': 'vbz'}, {'word': 'an', 'pos': 'dt'}, {'word': 'example', 'pos': 'nn'}, {'word': 'sentence', 'pos': 'nn'}, {'word': 'about', 'pos': 'in'}, {'word': 'pepperoni', 'pos': 'nn'}, {'word': 'pizza', 'pos': 'nn'}, {'word': '.', 'pos': '.'}]
 ```
-A real-world example is the Brown Corpus, which is available with POS tags (see the [Brown tagset](http://korpus.uib.no/icame/manuals/BROWN/INDEX.HTM) for tag specifications). Tags are separated from words by a "/" character. When used, sub-tags (e.g., "tl") are separated from main tags by a "-" character. You can download the POS-tagged version of the [Brown corpus here]().
+A real-world example is the Brown Corpus, which is available with POS tags (see the [Brown tagset](http://korpus.uib.no/icame/manuals/BROWN/INDEX.HTM) for tag specifications). Tags are separated from words by a "/" character. When used, sub-tags (e.g., "tl") are separated from main tags by a "-" character. You can download the POS-tagged version of the [Brown corpus here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_pos.zip).
 
 ```python
 brown_sample1 = "The/at Fulton/np-tl County/nn-tl Grand/jj-tl Jury/nn-tl said/vbd Friday/nr an/at investigation/nn of/in Atlanta's/np$ recent/jj primary/nn election/nn produced/vbd ``/`` no/at evidence/nn ''/'' that/cs any/dti irregularities/nns took/vbd place/nn ./."
@@ -373,7 +373,7 @@ leveraged AJ0
 buyout NN1
 ```
 ### Extending the analysis to a corpus
-Finally, we can repeat our search for adjective + noun bigrams in a 4-million word sample of the BNC (called BNC Baby). You can download the original [BNC Baby here](https://ota.bodleian.ox.ac.uk/repository/xmlui/handle/20.500.12024/2553). Our **_corpus_freq()_** function presumes all corpus texts are in the same folder, so we will [use this version](), wherein all corpus .xml files are included in a folder called "bnc_baby". Our analysis indicates that the most frequent adjective + noun combinations are _little bit_, _long time_, and _other hand_ (among many others).
+Finally, we can repeat our search for adjective + noun bigrams in a 4-million word sample of the BNC (called BNC Baby). You can download the original [BNC Baby here](https://ota.bodleian.ox.ac.uk/repository/xmlui/handle/20.500.12024/2553). Our **_corpus_freq()_** function presumes all corpus texts are in the same folder, so we will [use this version](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/bnc_baby.zip), wherein all corpus .xml files are included in a folder called "bnc_baby". Our analysis indicates that the most frequent adjective + noun combinations are _little bit_, _long time_, and _other hand_ (among many others).
 
 ```python
 bnc_jj_nn_freq = corpus_freq("bnc_baby",bnc_xml_dicter,"\t", ["AJ0","AJC","AJS"], ["NN0","NN1","NN2"],ending = ".xml")
@@ -432,7 +432,7 @@ irregularities NNS
 took VBD
 place NN
 ```
-One example of a corpus that uses TEI XML is the [XML version of the Brown Corpus](). For now, we won't create a function to analyze these texts, but you should be able to do so by making small changes to the **_bnc_xml_dicter()_** function.
+One example of a corpus that uses TEI XML is the [XML version of the Brown Corpus](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_tei_xml.zip). For now, we won't create a function to analyze these texts, but you should be able to do so by making small changes to the **_bnc_xml_dicter()_** function.
 ## Exercises
 1. Using the functions defined in this tutorial, find and report the 10 most frequent adverb + adjective combinations in the Brown corpus, the GUM corpus, and the BNC Baby corpus. Note that you will need to check the documentation for each tagset to ensure that you are searching for the correct tags.
 
