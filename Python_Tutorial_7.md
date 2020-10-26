@@ -1,7 +1,7 @@
 # Python Tutorial 7: Keyness
 [Back to Tutorial Index](py_index.md)
 
-(updated 10-20-2020)
+(updated 10-26-2020)
 
 In this tutorial we will create a function that identifies items that occur more frequently in on corpus as compared to another (i.e., "key" items). To this end, we will reuse and revise some functions from previous tutorials. We will also explore a new way to represent texts (via n-grams).
 
@@ -431,4 +431,4 @@ silent  -96.3904691203687
 
 4. What are the ten least "key" trigrams in the newspaper corpus? Be sure to report the keyness values (and method used).
 
-5. Check the frequency of the items identified in Exercise 1 in each corpus. What are some related limitations of the keyness method? How might we mitigate this/these issue(s)? (this was purposefully vague... but think about how frequent an item needs to be across contexts to be both "important" and "useful" - and note that this answer may change depending on purpose). Don't spend too much time on this question!
+5. Check the frequency of the items identified in Exercise 3 in each corpus. What are some related limitations of the keyness method? How might we mitigate this/these issue(s)? (this was purposefully vague... but think about how frequent an item needs to be across contexts to be both "important" and "useful" - and note that this answer may change depending on purpose). Don't spend too much time on this question!
