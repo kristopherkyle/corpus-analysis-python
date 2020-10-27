@@ -269,7 +269,7 @@ print(conll_sample_ld[:5]) #print the first five items
 ```
 > [{'idx': 0, 'word': 'therefore', 'upos': 'ADV', 'pos': 'RB', 'dep': 'advmod', 'head_idx': 3}, {'idx': 1, 'word': 'both', 'upos': 'DET', 'pos': 'DT', 'dep': 'det', 'head_idx': 2}, {'idx': 2, 'word': 'institutes', 'upos': 'NOUN', 'pos': 'NNS', 'dep': 'nsubj', 'head_idx': 3}, {'idx': 3, 'word': 'joined', 'upos': 'VERB', 'pos': 'VBD', 'dep': 'root', 'head_idx': 'root'}, {'idx': 4, 'word': 'forces', 'upos': 'NOUN', 'pos': 'NNS', 'dep': 'obj', 'head_idx': 3}]
 ```
-Now that we have a function that extracts the information we want from CONLL format, we can use the **_bigram_pos()_** and **_corpus_freq()_** functions to calculate adjective-noun bigrams in the GUM corpus. Download the [GUM corpus here](<insert_link>) (don't forget to set your working directory, and note the different filename ending!).
+Now that we have a function that extracts the information we want from CONLL format, we can use the **_bigram_pos()_** and **_corpus_freq()_** functions to calculate adjective-noun bigrams in the GUM corpus. Download the [GUM corpus here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/gum_corpus.zip) (don't forget to set your working directory, and note the different filename ending!).
 
 ```python
 gum_jj_nn_freq = corpus_freq("gum_corpus",conll_dicter,"\t", ["JJ","JJR","JJS"], ["NN","NNS"],ending = ".conllu")
