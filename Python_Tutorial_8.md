@@ -269,7 +269,7 @@ print(conll_sample_ld[:5]) #print the first five items
 ```
 > [{'idx': 0, 'word': 'therefore', 'upos': 'ADV', 'pos': 'RB', 'dep': 'advmod', 'head_idx': 3}, {'idx': 1, 'word': 'both', 'upos': 'DET', 'pos': 'DT', 'dep': 'det', 'head_idx': 2}, {'idx': 2, 'word': 'institutes', 'upos': 'NOUN', 'pos': 'NNS', 'dep': 'nsubj', 'head_idx': 3}, {'idx': 3, 'word': 'joined', 'upos': 'VERB', 'pos': 'VBD', 'dep': 'root', 'head_idx': 'root'}, {'idx': 4, 'word': 'forces', 'upos': 'NOUN', 'pos': 'NNS', 'dep': 'obj', 'head_idx': 3}]
 ```
-Now that we have a function that extracts the information we want from CONLL format, we can use the **_bigram_pos()_** and **_corpus_freq()_** functions to calculate adjective-noun bigrams in the GUM corpus. Download the [GUM corpus here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/gum_corpus.zip) (don't forget to set your working directory, and note the different filename ending!).
+Now that we have a function that extracts the information we want from CONLL format, we can use the **_bigrammer_pos()_** and **_corpus_freq()_** functions to calculate adjective-noun bigrams in the GUM corpus. Download the [GUM corpus here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/gum_corpus.zip) (don't forget to set your working directory, and note the different filename ending!).
 
 ```python
 gum_jj_nn_freq = corpus_freq("gum_corpus",conll_dicter,"\t", ["JJ","JJR","JJS"], ["NN","NNS"],ending = ".conllu")
@@ -436,6 +436,6 @@ One example of a corpus that uses TEI XML is the [XML version of the Brown Corpu
 ## Exercises
 1. Using the functions defined in this tutorial, find and report the 10 most frequent adverb + adjective combinations in the Brown corpus, the GUM corpus, and the BNC Baby corpus. Note that you will need to check the documentation for each tagset to ensure that you are searching for the correct tags.
 
-2. Adapt your functions to report the 10 most frequent verbs in the Brown Corpus, the GUM corpus, and the BNC Baby corpus. You should be able to do so by making the **_bigram_pos()_** function return verbs instead of bigrams. This should only require some small changes.
+2. Adapt your functions to report the 10 most frequent verbs in the Brown Corpus, the GUM corpus, and the BNC Baby corpus. You should be able to do so by making the **_bigrammer_pos()_** function return verbs instead of bigrams. This should only require some small changes.
 
 3. Norm your verb frequencies per million words (word frequency/corpus size) * 1000000. For the purposes of this exercise, you can use the following corpus sizes: Brown = 1,000,000; GUM = 113,000; BNC Baby = 4,000,000. What similarities/differences do you observe in the normalized frequencies? Why do you think these similarities/differences exist?
