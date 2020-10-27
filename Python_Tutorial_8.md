@@ -70,7 +70,7 @@ print(sample_posd) #print sample
 ```
 > [{'word': 'this', 'pos': 'dt'}, {'word': 'is', 'pos': 'vbz'}, {'word': 'an', 'pos': 'dt'}, {'word': 'example', 'pos': 'nn'}, {'word': 'sentence', 'pos': 'nn'}, {'word': 'about', 'pos': 'in'}, {'word': 'pepperoni', 'pos': 'nn'}, {'word': 'pizza', 'pos': 'nn'}, {'word': '.', 'pos': '.'}]
 ```
-A real-world example is the Brown Corpus, which is available with POS tags (see the [Brown tagset](http://korpus.uib.no/icame/manuals/BROWN/INDEX.HTM) for tag specifications). Tags are separated from words by a "/" character. When used, sub-tags (e.g., "tl") are separated from main tags by a "-" character. You can download the POS-tagged version of the [Brown corpus here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_pos.zip).
+A real-world example is the Brown Corpus, which is available with POS tags (see the [Brown tagset](http://korpus.uib.no/icame/manuals/BROWN/INDEX.HTM#bc6) for tag specifications). Tags are separated from words by a "/" character. When used, sub-tags (e.g., "tl") are separated from main tags by a "-" character. You can download the POS-tagged version of the [Brown corpus here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/sample_data/brown_pos.zip).
 
 ```python
 brown_sample1 = "The/at Fulton/np-tl County/nn-tl Grand/jj-tl Jury/nn-tl said/vbd Friday/nr an/at investigation/nn of/in Atlanta's/np$ recent/jj primary/nn election/nn produced/vbd ``/`` no/at evidence/nn ''/'' that/cs any/dti irregularities/nns took/vbd place/nn ./."
