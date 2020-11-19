@@ -21,6 +21,6 @@
 
 ## Supplemental mini-tutorials:
 
-## [Lemmatization](PySupp1_lemmatization.md)
+### [Lemmatization](PySupp1_lemmatization.md)
 
-## [Advanced Concordancing](PySupp2_Concord.md)
+### [Advanced Concordancing](PySupp2_Concord.md)
