@@ -477,6 +477,8 @@ have    0.17557251908396945
 as      0.17557251908396945
 was     0.16793893129770993
 ```
+### Updated concordancer
+In [Python Tutorial 5](Python_Tutorial_5.md), we made two versions of a rather simple concordancer. For a version of the concordancer that allows for n-gram searches and target + context searches, [see this updated version](PySupp2_Concord.md).
 
 ## Exercises
 

@@ -1,6 +1,8 @@
 # This is a list of Python mini-tutorials
 [Back to homepage](README.md)
 
+## Main tutorials:
+
 ### [Tutorial 1: Introduction to Python](Python_Tutorial_1.md)
 
 ### [Tutorial 2: Conditionals, Loops, Strings, and Lists](Python_Tutorial_2.md)
@@ -16,3 +18,9 @@
 ### [Tutorial 7: Keyness](Python_Tutorial_7.md)
 
 ### [Tutorial 8: Dealing with annotated texts](Python_Tutorial_8.md)
+
+## Supplemental mini-tutorials:
+
+## [Lemmatization](PySupp1_lemmatization.md)
+
+## [Advanced Concordancing](PySupp2_Concord.md)
