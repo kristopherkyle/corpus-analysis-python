@@ -17,7 +17,9 @@
 
 ### [Tutorial 7: Keyness](Python_Tutorial_7.md)
 
-### [Tutorial 8: Dealing with annotated texts](Python_Tutorial_8.md)
+### [Tutorial 8: Dealing with Annotated Texts](Python_Tutorial_8.md)
+
+### [Tutorial 9: Calculating and Outputting Text-Level Variables](Python_Tutorial_9.md)
 
 ## Supplemental mini-tutorials:
 
