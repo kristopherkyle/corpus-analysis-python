@@ -26,3 +26,5 @@
 ### [Lemmatization](PySupp1_lemmatization.md)
 
 ### [Advanced Concordancing](PySupp2_Concord.md)
+
+### [Introduction to Web Scraping](PySupp3_Scraping.md)
