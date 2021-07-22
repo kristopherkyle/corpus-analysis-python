@@ -171,10 +171,10 @@ To scrape our Python tutorial page, we will first gather all relevant URLs (web 
 ### Get links
 First we will get all links from the landing page:
 
-sample3 = requests.get("https://kristopherkyle.github.io/corpus-analysis-python/py_index.html")
-soup3 = BeautifulSoup(sample3.content, 'html.parser')
-
 ```python
+sample3 = requests.get("https://kristopherkyle.github.io/corpus-analysis-python/py_index.html") #get html from index page
+soup3 = BeautifulSoup(sample3.content, 'html.parser') #parse html
+
 links3 = []
 for x in soup3.find_all('a'):
 	links3.append(x["href"])
@@ -207,7 +207,7 @@ As we can see, there are links to pages other than the main tutorials (which inc
 links3 = []
 for x in soup3.find_all('a'):
 	if "Tutorial" in x["href"]: #only include links with "Tutorial in URL"
-		links2b.append(x["href"])
+		links3.append(x["href"])
 		print(x["href"])
 
 ```
