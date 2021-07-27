@@ -2,6 +2,8 @@
 
 Web scraping is a method of collecting corpus data from the internet. The basics are reasonably straightforward, but each web scraping project will have its challenges. This tutorial is a very simple introduction to web scraping static .html pages using the **requests** module and **BeautifulSoup** in Python 3. For more information on web scraping in Python, please see more in-depth tutorials such as [this one](https://www.dataquest.io/blog/web-scraping-python-using-beautiful-soup/) and the docs for modules such as [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) and [Selenium](https://selenium-python.readthedocs.io/).
 
+Note that you can see the underlying .html of any web page using Google Chrome. From the toolbar, select View -> Developer -> View Source and a new page with the .html representation will open.
+
 ## Imports
 This tutorial will use the following modules:
 - **requests** If this isn't installed on your system, follow the [installation instructions (using pip)](https://docs.python-requests.org/en/master/user/install/#install).
@@ -142,6 +144,8 @@ We can also extract all links. As we see below, there are a variety of links (so
 ```python
 links2 = []
 for x in soup2.find_all('a'):
+	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+		continue
 	links2.append(x["href"])
 	print(x["href"])
 ```
@@ -176,7 +180,9 @@ sample3 = requests.get("https://kristopherkyle.github.io/corpus-analysis-python/
 soup3 = BeautifulSoup(sample3.content, 'html.parser') #parse html
 
 links3 = []
-for x in soup3.find_all('a'):
+for x in soup3.find_all(['a']): #we can also search other tags by adding them to the list
+	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+		continue
 	links3.append(x["href"])
 	print(x["href"])
 ```
@@ -205,7 +211,9 @@ As we can see, there are links to pages other than the main tutorials (which inc
 ```python
 #we only want the tutorials, so we will use an "if" statement to filter our links
 links3 = []
-for x in soup3.find_all('a'):
+for x in soup3.find_all(['a']):
+	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+		continue
 	if "Tutorial" in x["href"]: #only include links with "Tutorial in URL"
 		links3.append(x["href"])
 		print(x["href"])
@@ -231,7 +239,9 @@ links3 = []
 #finally, we can see that we don't have a full URL, so we need to add the beginning of the URL to our links
 web_address = "https://kristopherkyle.github.io"
 links3 = []
-for x in soup3.find_all('a'):
+for x in soup3.find_all(['a']):
+	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+		continue
 	if "Tutorial" in x["href"]:
 		links3.append(web_address + x["href"])
 		print(web_address + x["href"])
@@ -260,7 +270,7 @@ for link in links3:
 	print("Processing: " + link)
 	page = requests.get(link) #download .html
 	soup = BeautifulSoup(page.content, 'html.parser') #parse html page
-	for text in soup.find_all('p'):
+	for text in soup.find_all(['p']):
 		full_text.append(text.get_text())
 	py_corpus.append("\n".join(full_text)) #combine list items into a single string and add text data to corpus1 list
 
@@ -302,3 +312,8 @@ will	152
 and	150
 function	137
 ```
+
+## Final notes
+There is no "one-size-fits-all" approach to web scraping. For example, your desired content will not always be in <p> tags, and web pages will often have links that you don't want to use. The key to successful scraping is understanding the structure of a particular website and (sometimes creatively) using the structure to extract the desired information (and ignore the rest).
+
+Good luck!
