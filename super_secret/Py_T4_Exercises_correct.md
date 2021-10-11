@@ -162,4 +162,4 @@ freq_writer(sorted_NICT,"NICT_freq_clean.txt")
 
 ## Zipped Folder (with results)
 
-For a zipped folder with the above code, the source files, and the output files, [click here]().
+For a zipped folder with the above code, the source files, and the output files, [click here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/super_secret/Py_T4_Exercises_correct.zip).
