@@ -121,7 +121,7 @@ def freq_simple(tok_list):
 
 Note that a zipped folder with the code, the source files, and the output files for these exercises are [available click here](https://github.com/kristopherkyle/corpus-analysis-python/raw/master/super_secret/Py_T5_Exercises_correct.zip).
 
-### 1. Create a sample of 50 concordance lines of the word “record” in the Brown corpus. Use ten words of right context and ten words of left context. Write the concordance lines to a file called “1_record.txt”. Then, read the concordance lines and identify at least two senses of the word “record”. Be sure to provide at least two examples of each sense. Report your findings in your .py file (use hashtags at the beginning of each line)
+**1. Create a sample of 50 concordance lines of the word “record” in the Brown corpus. Use ten words of right context and ten words of left context. Write the concordance lines to a file called “1_record.txt”. Then, read the concordance lines and identify at least two senses of the word “record”. Be sure to provide at least two examples of each sense. Report your findings in your .py file (use hashtags at the beginning of each line)**
 
 ```python
 #create concordance lines:
@@ -132,7 +132,7 @@ write_concord("1_record.txt",record_conc_50)
 #record as a verb - store things (such as pictures) for later use (ish)
 ```
 
-### 2. Update the corp_conc() function in a manner that allows you to use the concord_regex() function instead of the concord() function and call it corp_conc_regex(). Then, create a sample of 50 concordance lines with node/target words that start with “repe”. Write the concordance lines to a file called “2repe.txt”(What is the most common root word in your sample?
+**2. Update the corp_conc() function in a manner that allows you to use the concord_regex() function instead of the concord() function and call it corp_conc_regex(). Then, create a sample of 50 concordance lines with node/target words that start with “repe”. Write the concordance lines to a file called “2repe.txt”(What is the most common root word in your sample?**
 
 See comments in corp_conc_regex() function below. Minimal changes are needed to convert corp_conc() into corp_conc_regex().
 
@@ -189,7 +189,7 @@ print(repe_freq) #the most frequent hit was "repeated"
 ```
 
 
-### 3. Create a sample of 50 concordance lines that include words with the nominalized suffix “ation” (be sure to include plural forms). Bonus points if you are able to avoid words such as “nation” (which is not a transparent nominalization-don’t overthink this). Write your results to a file called “3_ation.txt”
+**3. Create a sample of 50 concordance lines that include words with the nominalized suffix “ation” (be sure to include plural forms). Bonus points if you are able to avoid words such as “nation” (which is not a transparent nominalization-don’t overthink this). Write your results to a file called “3_ation.txt”**
 
 
 ```python
@@ -209,7 +209,7 @@ ation_conc_50_bonus = corp_conc_regex("brown_corpus",".*[aeiou].ation.*",50,10,1
 write_concord("3_ation_bonus.txt",ation_conc_50_bonus)
 ```
 
-### 4 Create a version of the “write_concord()” function that places a tab character between items in the context lists instead of a space. Do a concordance search of your choosing (in Brown or another corpus) and write the concordance lines to a file called “4_my_search.txt”
+**4. Create a version of the “write_concord()” function that places a tab character between items in the context lists instead of a space. Do a concordance search of your choosing (in Brown or another corpus) and write the concordance lines to a file called “4_my_search.txt”**
 
 See write_concord_tab() code below. For this version we only have to change the two ".join()" commands slightly. For now, we can ignore the header (which will be off).
 
