@@ -1,4 +1,4 @@
-# Python Exercise 5 (Answers)
+# Python Exercise 6 (Answers)
 
 ## Necessary Functions from tutorial:
 First, we will define all required functions from the tutorial:
