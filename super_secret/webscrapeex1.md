@@ -39,15 +39,15 @@ wiki_urls2 = []
 start = False
 stop = False
 for x in wiki_soup.find_all(["a"]): #get title from page
-	if x.has_attr("href") == True and x.has_attr("title") == True: #check to see if a tag has a "href" attribute
-
-		if x["title"] == "Accelerating change":
+	if x.has_attr("href") == True and x.has_attr("title") == True: #check to see if a tag has a "href" attribute and a "title" attribute
+		#as long as start = False, no data will be collected
+		if x["title"] == "Accelerating change": #when we hit this <a> tag, we will start collecting urls
 			start = True
-		if x["title"] == "Space transport":
+		if x["title"] == "Space transport": #when we hit this one, we will stop collecting tags
 			stop = True
-		if start == True:
+		if start == True: #if the start switch has been turned on, collect the url!
 			wiki_urls2.append(x["href"])
-		if stop == True:
+		if stop == True: #break the loop if the "stop" switch has been turned on.
 			break
 
 len(wiki_urls2) #160
