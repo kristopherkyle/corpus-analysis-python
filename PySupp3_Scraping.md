@@ -1,4 +1,5 @@
 # Introduction to Web Scraping with Python
+(updated 2021-11-01)
 
 Web scraping is a method of collecting corpus data from the internet. The basics are reasonably straightforward, but each web scraping project will have its challenges. This tutorial is a very simple introduction to web scraping static .html pages using the **requests** module and **BeautifulSoup** in Python 3. For more information on web scraping in Python, please see more in-depth tutorials such as [this one](https://www.dataquest.io/blog/web-scraping-python-using-beautiful-soup/) and the docs for modules such as [Beautiful Soup](https://beautiful-soup-4.readthedocs.io/en/latest/) and [Selenium](https://selenium-python.readthedocs.io/).
 
@@ -144,7 +145,7 @@ We can also extract all links. As we see below, there are a variety of links (so
 ```python
 links2 = []
 for x in soup2.find_all('a'):
-	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+	if x.has_attr("href") != True: #skip any 'a' tags that don't have an "href" attribute
 		continue
 	links2.append(x["href"])
 	print(x["href"])
@@ -181,7 +182,7 @@ soup3 = BeautifulSoup(sample3.content, 'html.parser') #parse html
 
 links3 = []
 for x in soup3.find_all(['a']): #we can also search other tags by adding them to the list
-	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+	if x.has_attr("href") != True: #skip any 'a' tags that don't have an "href" attribute
 		continue
 	links3.append(x["href"])
 	print(x["href"])
@@ -212,7 +213,7 @@ As we can see, there are links to pages other than the main tutorials (which inc
 #we only want the tutorials, so we will use an "if" statement to filter our links
 links3 = []
 for x in soup3.find_all(['a']):
-	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+	if x.has_attr("href") != True: #skip any 'a' tags that don't have an "href" attribute
 		continue
 	if "Tutorial" in x["href"]: #only include links with "Tutorial in URL"
 		links3.append(x["href"])
@@ -240,7 +241,7 @@ links3 = []
 web_address = "https://kristopherkyle.github.io"
 links3 = []
 for x in soup3.find_all(['a']):
-	if x.has_attr != True: #skip any 'a' tags that don't have an "href" attribute
+	if x.has_attr("href") != True: #skip any 'a' tags that don't have an "href" attribute
 		continue
 	if "Tutorial" in x["href"]:
 		links3.append(web_address + x["href"])
