@@ -1,4 +1,4 @@
-# Webscraping Exercise 1: Extract Relevant URLs from Wikipedia
+# Webscraping Exercises 1-2: Extract Relevant URLs from Wikipedia
 
 In this exercise, the goal is to extract urls from a particular section of a Wikipedia page. This task involves examining the html structure of a page and extracting the desired links (but ONLY the desired ones).
 
