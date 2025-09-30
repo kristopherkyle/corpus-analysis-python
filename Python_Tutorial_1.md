@@ -1,5 +1,5 @@
 [Back to Tutorial Index](py_index.md)  
-Updated 9-21-2020
+Updated 9-30-2025
 # Python Tutorial 1
 
 ### Accessing Python; Values, Variables and Functions
@@ -29,7 +29,7 @@ print("Hello, World!")
 $ python script_name.py
 > Hello, World!
 ```
-* In a Python interpreter (such as spyder)
+* In a Python interpreter (such as Spyder or Visual Studio Code)
 
 ---
 
