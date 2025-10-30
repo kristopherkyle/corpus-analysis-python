@@ -1,7 +1,7 @@
 # Python Tutorial 8: Dealing with annotated texts
 [Back to Tutorial Index](py_index.md)
 
-(updated 10-30-2025)
+(updated 10-30-2025; 10:22am)
 
 Annotating texts for features as part of speech (POS) and syntactic dependency relations (among many, many others) can allow for detailed corpus analyses. For many features (and for many languages), automatic annotation is a viable option (see, e.g., [Spacy](https://spacy.io/), an easy to use POS tagger and dependency parser implemented in Python). However, for some features (and for some languages), automatic annotation tools/models have not been developed (though new NLP tools are being released every day - it is certainly worth a quick web search).
 
@@ -231,12 +231,43 @@ The **_conll_dicter()_** function takes two arguments (see below) and outputs a 
 - **_splitter_** is the character that separates annotations (in this case, it is "\t")
 
 ```python
+		def conll_dicter(text,splitter):
+	output_list = [] #list for each token
+	sent_start = -1 #this to adjust token (and head) id numbers in relation to the whole document
+	previous_id = 0
+
+	text = text.split("\n") #split text into lines
+	for line in text:
+		token = {}
+		if len(line) < 1: #skip lines without annotation
+			continue
+		if line[0] == "#": #skip lines without target annotation
+			continue
+		anno = line.split(splitter) #split by splitting character (in the case of our example, this will be a tab character)
+		
 		#check idx for valid integer in idx slot, skip lines if not
 		try:
 			int(anno[0])
 		except ValueError:
 			print("Skipped", anno) #print line that was skipped
 			continue
+
+		if int(anno[0]) == 1:
+			sent_start += previous_id #update sent_start
+			previous_id = 0 #reset last id
+		#now, we will grab all relevant information and add it to our token dictionary:
+		token["idx"] = sent_start + int(anno[0])
+		token["word"] = anno[1].lower() #put words in lower case
+		token["upos"] = anno[3] #get the universal pos tag
+		token["pos"] = anno[4] #penn tag
+		token["dep"] = anno[7] #dependency relationship
+		if token["dep"] == "root": #roots don't have a concrete head. In a sentence, their head idx is 0. That doesn't make sense here, so we will make "root" the head idx.
+			token["head_idx"] = "root"
+		else:
+			token["head_idx"] = sent_start + int(anno[6]) #id of dependency head (in document)
+		previous_id += 1		
+		output_list.append(token)
+	return(output_list)
 ```
 We can test our function on the sample text:
 ```python
