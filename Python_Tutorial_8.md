@@ -231,7 +231,7 @@ The **_conll_dicter()_** function takes two arguments (see below) and outputs a 
 - **_splitter_** is the character that separates annotations (in this case, it is "\t")
 
 ```python
-		def conll_dicter(text,splitter):
+def conll_dicter(text,splitter):
 	output_list = [] #list for each token
 	sent_start = -1 #this to adjust token (and head) id numbers in relation to the whole document
 	previous_id = 0
